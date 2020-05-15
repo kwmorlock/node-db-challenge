@@ -10,6 +10,21 @@ exports.up = function(knex) {
         tbl.boolean('completed')
         .defaultTo(false);
     })
+
+    .createTable('resource', tbl => {
+        tbl.increments();
+        tbl.string('resource_name', 128)
+        .unique()
+        .notNullable();
+        tbl.string('description', 128);
+        tbl.integer('resource_id')
+        .unsigned() 
+        .notNullable()
+        .references('id')
+        .inTable('projects')
+        .onDelete('CASCADE') 
+        .onUpdate('CASCADE');
+    })
 };
 
 exports.down = function(knex) {
