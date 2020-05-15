@@ -25,6 +25,16 @@ exports.up = function(knex) {
         .onDelete('CASCADE') 
         .onUpdate('CASCADE');
     })
+    .createTable('task', tbl => {
+        tbl.increments();
+        tbl.string('task_name', 128)
+        .unique()
+        .notNullable();
+        tbl.string('description', 128);
+        tbl.string('notes', 128);
+        tbl.boolean('in_use')
+        .defaultTo(false);
+    })
 };
 
 exports.down = function(knex) {
