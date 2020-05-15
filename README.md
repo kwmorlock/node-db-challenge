@@ -19,7 +19,7 @@ Follow these steps to set up and work on your project:
 - [X] Create a forked copy of this project.
 - [X] Add your _Team Lead_ as collaborator on Github.
 - [X] Clone your forked version of the Repository.
-- [ ] Create a new Branch on the clone: git checkout -b `firstName-lastName`.
+- [X] Create a new Branch on the clone: git checkout -b `firstName-lastName`.
 - [ ] Implement the project on this Branch, committing changes regularly.
 - [ ] Push commits: git push origin `firstName-lastName`.
 
